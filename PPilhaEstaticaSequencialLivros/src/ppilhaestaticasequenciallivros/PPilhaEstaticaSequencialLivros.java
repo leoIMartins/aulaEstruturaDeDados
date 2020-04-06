@@ -27,6 +27,10 @@ public class PPilhaEstaticaSequencialLivros {
                     l.setIsbn(JOptionPane.showInputDialog("Informe o código ISBN do livro:"));
                     minha_pilha_livros.push(l);
                     JOptionPane.showMessageDialog(null, "Livro inserido com sucesso!");
+                case 2:
+                    minha_pilha_livros.pop();
+                case 3:
+                    minha_pilha_livros.print();
             }
         }
          //Menu

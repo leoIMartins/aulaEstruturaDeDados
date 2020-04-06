@@ -1,5 +1,7 @@
 package ppilhaestaticasequenciallivros;
 
+import javax.swing.JOptionPane;
+
 public class Pilha_Livro {
     static int topo;
     static Livro elementos[] = new Livro[5];
@@ -8,7 +10,7 @@ public class Pilha_Livro {
         topo = -1; /* Posicao de Controle - Invalida */
         for(int i=0; i<elementos.length ;i++)
             elementos[i]=null;
-        System.out.println("Pilha Criada com Sucesso!!!");
+        JOptionPane.showMessageDialog(null, "Pilha Criada com Sucesso!!!");
     }
     
     private static boolean vazia(){
@@ -27,20 +29,20 @@ public class Pilha_Livro {
     
     public static void pop(){ //remover
         if (vazia()){
-            System.out.println("Impossivel Remover, Pilha VAZIA!");
+            JOptionPane.showMessageDialog(null, "Impossivel Remover, Pilha VAZIA!");
         }
         else
         {
             elementos[topo]=null;  //Removendo o Livro da Posição do Topo
             topo--;
-            System.out.println("Elemento Removido!");
+            JOptionPane.showMessageDialog(null, "Elemento Removido!");
         }
     }
     
     public static void push(Livro livro){// Empilhar
         if(cheia())
         {
-            System.out.println("Impossivel Inserir, pois Pilha está cheia!");
+            JOptionPane.showMessageDialog(null, "Impossivel Inserir, pois Pilha está cheia!");
         }
         else
         {
@@ -51,13 +53,13 @@ public class Pilha_Livro {
     
     public static void print(){
         if (vazia()){
-            System.out.println("Pilha Vazia!");
+            JOptionPane.showMessageDialog(null, "Pilha Vazia!");
         }
         else
         {
-            System.out.println("Os elementos da Pilha são:");
+            JOptionPane.showMessageDialog(null, "Os elementos da Pilha são:");
             for (int i=topo; i>=0  ;i--){
-                System.out.println(elementos[i].toString());
+                JOptionPane.showMessageDialog(null, elementos[i].toString());
             }
         }
     }
