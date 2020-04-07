@@ -10,7 +10,6 @@ public class Pilha_Livro {
         topo = -1; /* Posicao de Controle - Invalida */
         for(int i=0; i<elementos.length ;i++)
             elementos[i]=null;
-        JOptionPane.showMessageDialog(null, "Pilha Criada com Sucesso!!!");
     }
     
     private static boolean vazia(){
@@ -57,10 +56,44 @@ public class Pilha_Livro {
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "Os elementos da Pilha são:");
             for (int i=topo; i>=0  ;i--){
                 JOptionPane.showMessageDialog(null, elementos[i].toString());
             }
         }
+    }
+    
+    public void quantidadeLivros(){
+        if(this.topo > -1){
+            int quantia = this.topo + 1;
+            JOptionPane.showMessageDialog(null, "Há " + quantia + " livro(s) na pilha!");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Não há livros na pilha!");
+        }
+    }
+    
+    public void procuraLivro(){
+        if(vazia()){
+            JOptionPane.showMessageDialog(null, "Não há livros na pilha!");
+        }
+        else{
+            int j = 0;
+            String titulo = JOptionPane.showInputDialog(null, "Informe o título do livro procurado:");
+            for (int i=topo; i>=0  ;i--){
+                if(elementos[i].getTitulo().equals(titulo)){
+                    j++;
+                }
+            }
+            if(j == 0){
+                JOptionPane.showMessageDialog(null, "O título " + titulo + " não foi encontrado na pilha!");
+            }
+            else if(j ==1){
+                JOptionPane.showMessageDialog(null, "O título " + titulo + " foi encontrado na pilha!");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "O título " + titulo + " foi encontrado " + j + " vezes na pilha!");
+            }
+        }
+        
     }
 }

@@ -9,8 +9,9 @@ public class PPilhaEstaticaSequencialLivros {
         Pilha_Livro minha_pilha_livros = new Pilha_Livro();
         
         int opcao = 0;
+        boolean condicao = true;
         
-        while(true) {
+        while(condicao) {
             opcao = Integer.parseInt(JOptionPane.showInputDialog("Informe a opção desejada:\n"
                     + "1 - Inserir Livro\n"
                     + "2 - Remover Livro\n"
@@ -27,10 +28,24 @@ public class PPilhaEstaticaSequencialLivros {
                     l.setIsbn(JOptionPane.showInputDialog("Informe o código ISBN do livro:"));
                     minha_pilha_livros.push(l);
                     JOptionPane.showMessageDialog(null, "Livro inserido com sucesso!");
+                    break;
                 case 2:
                     minha_pilha_livros.pop();
+                    break;
                 case 3:
                     minha_pilha_livros.print();
+                    break;
+                case 4:
+                    minha_pilha_livros.quantidadeLivros();
+                    break;
+                case 5:
+                    minha_pilha_livros.procuraLivro();
+                    break;
+                case 0:
+                    condicao = false;
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Informe uma opção válida!");
             }
         }
          //Menu
