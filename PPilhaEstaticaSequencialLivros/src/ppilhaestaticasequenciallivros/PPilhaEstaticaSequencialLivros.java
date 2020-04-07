@@ -48,38 +48,5 @@ public class PPilhaEstaticaSequencialLivros {
                     JOptionPane.showMessageDialog(null, "Informe uma opção válida!");
             }
         }
-         //Menu
-         //1 - Inserir Livro
-         //2 - Remover Livro 
-         //3 - Imprimir Livros
-         //4 - Quantidade de Livros na Pilha
-         //5 - Busca por Titulo
-         //0 - Sair do Programa
-         
-         
-         /*minha_pilha_livros.print();
-         
-         Livro meu_livro = new Livro("Poeria em Alto Mar", "Ze Ninguem", "000123");
-         minha_pilha_livros.push(meu_livro);
-         
-         meu_livro = new Livro("JAVA Minha Vida", "Amanda", "666");
-         minha_pilha_livros.push(meu_livro);
-         
-         minha_pilha_livros.print();
-         minha_pilha_livros.pop();
-         
-         minha_pilha_livros.push(new Livro("SEU PAPINI", "IAGO", "333"));
-         minha_pilha_livros.print();
-         
-         minha_pilha_livros.pop();
-         minha_pilha_livros.pop();
-         
-         minha_pilha_livros.pop();*/
-
-//opcao
-         //switch(opcao)
-         //{
-         //   case 2: minha_pilha_livros.pop();
-        
     }
 }
