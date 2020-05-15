@@ -13,6 +13,11 @@ public class Livro {
         this.anterior = null;
     }
 
+    public Livro() {
+        
+    }
+
+    
     public String getTitulo() {
         return titulo;
     }

@@ -94,6 +94,5 @@ public class Pilha_Livro {
                 JOptionPane.showMessageDialog(null, "O título " + titulo + " foi encontrado " + j + " vezes na pilha!");
             }
         }
-        
     }
 }
