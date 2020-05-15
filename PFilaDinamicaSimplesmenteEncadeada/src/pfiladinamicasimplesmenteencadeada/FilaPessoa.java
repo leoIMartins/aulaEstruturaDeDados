@@ -44,11 +44,52 @@ public class FilaPessoa {
             JOptionPane.showMessageDialog(null, "Impossível Imprimir, Fila Vazia!!!");
         else{
             Pessoa aux = head;
+            JOptionPane.showMessageDialog(null, "Pessoa(s) na Fila:");
             do{
-                JOptionPane.showMessageDialog(null, "Pessoa(s) na Fila:\n" + aux.toString());
+                JOptionPane.showMessageDialog(null, aux.toString());
                 aux = aux.getProximo();
             }while(aux!=null);
         }
+    }
+    
+    public void quantidadePessoas(){
+        if (vazia())
+            JOptionPane.showMessageDialog(null, "A fila está vazia!");
+        else {
+            Pessoa aux = head;
+            Integer quantidade = 0;
+            do{
+                aux = aux.getProximo();
+                quantidade += 1;
+            }while(aux!=null);
+            JOptionPane.showMessageDialog(null, "Existe " + quantidade + " pessoa(s) na fila!");
+        }
+    }
+    public void procuraPessoa(){
+        if(vazia()){
+            JOptionPane.showMessageDialog(null, "Não há pessoas na fila!");
+        }
+        else{
+            int j = 0;
+            String nome = JOptionPane.showInputDialog(null, "Informe o nome da pessoa procurada:");
+            Pessoa aux = head;
+            do {
+                if(aux.getNome().equals(nome))
+                    j++;
+                aux = aux.getProximo();
+            }while(aux!=null);
+            
+            if(j == 0){
+                JOptionPane.showMessageDialog(null, "O nome " + nome + " não foi encontrado na fila!");
+            }
+            else if(j ==1){
+                JOptionPane.showMessageDialog(null, "O nome " + nome + " foi encontrado na fila!");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "O nome " + nome + " foi encontrado " + j + " vezes na fila!");
+            }
+        }
+        
     }
             
 }
