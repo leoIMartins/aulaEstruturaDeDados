@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 public class PListaEstaticaSequencial {
 
     public static void main(String[] args) {
-        Lista_Pessoa minha_fila = new Lista_Pessoa();
+        Lista_Pessoa minha_lista = new Lista_Pessoa();
 
         int opcao;
         boolean condicao = true;
@@ -27,19 +27,19 @@ public class PListaEstaticaSequencial {
                             JOptionPane.showInputDialog("Informe o nome do pessoa:"), 
                             JOptionPane.showInputDialog("Informe o telefone da pessoa:")
                     );
-                    minha_fila.push(p);
+                    minha_lista.push(p);
                     break;
                 case 2:
-                    minha_fila.pop();
+                    minha_lista.pop();
                     break;
                 case 3:
-                    minha_fila.print();
+                    minha_lista.print();
                     break;
                 case 4:
-                    minha_fila.quantidadePessoas();
+                    //minha_lista.quantidadePessoas();
                     break;
                 case 5:
-                    minha_fila.procuraPessoa();
+                    //minha_lista.procuraPessoa();
                     break;
                 case 0:
                     condicao = false;

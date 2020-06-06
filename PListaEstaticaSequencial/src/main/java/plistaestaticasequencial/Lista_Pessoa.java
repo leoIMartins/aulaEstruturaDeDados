@@ -1,5 +1,5 @@
 package plistaestaticasequencial;
-
+import java.util.Arrays;
 
 
 import javax.swing.JOptionPane;
@@ -31,16 +31,12 @@ public class Lista_Pessoa {
         }
         else{
             if (cheia()){
-                JOptionPane.showMessageDialog(null, "Impossível inserir, lista cheia!");
+                JOptionPane.showMessageDialog(null, "A lista está cheia!");
             }
             else{
-                for (int i = 0;i < elementos.length;i ++){
-                    if (elementos[i].getNome().
-                }
-                for (int j = n;j > 4;j -- )
-			A[ j ] = A[ j – 1 ];
-		A[ i ] = 'novo valor';
-		n  = n + 1;
+                n ++;
+                elementos[n] = aux;
+		Arrays.sort(elementos);
 
                 JOptionPane.showMessageDialog(null, "Pessoa inserida com sucesso!");
             }
@@ -49,32 +45,36 @@ public class Lista_Pessoa {
     
     public void print(){
         if (vazia()){
-            JOptionPane.showMessageDialog(null, "Impossível imprimir, FILA VAZIA!");
+            JOptionPane.showMessageDialog(null, "A lista está vazia!");
         }
         else{
-            JOptionPane.showMessageDialog(null, "As Pessoas na FILA são:");
-            for (int i = head; i<=tail; i++)
+            JOptionPane.showMessageDialog(null, "As pessoas na lista são:");
+            for (int i = 0; i <= n; i ++)
                 JOptionPane.showMessageDialog(null, elementos[i].toString());
-            JOptionPane.showMessageDialog(null, "**** FIM DA FILA ****");
+            JOptionPane.showMessageDialog(null, "**** Fim da lista ****");
         }
     }
     
     public void pop(){
         if (vazia()){
-            JOptionPane.showMessageDialog(null, "Impossível REMOVER, FILA VAZIA!");
+            JOptionPane.showMessageDialog(null, "A lista está vazia!");
         }
         else{
-            //Vai deslocar cada Pessoa na FILA, uma posição para a esquerda (Até a CAUDA - FINAL DA FILA)
-            for (int i=head; i<tail ;i++)
-                elementos[i] = elementos[i+1];
-            elementos[tail]=null;//Para remover a referência da última Pessoa na CAUDA
-            tail--;//Ajusto o valor da CAUDA
-            if (tail == -1)
-                head = tail; // Ajusto o Valor da Cabeça para -1 (Igual a fila criada vazia!)
-            JOptionPane.showMessageDialog(null, "Pessoa Removida da Fila");
+            print();
+            String nome = JOptionPane.showInputDialog(null, "Informe o nome da pessoa a ser excluída:");
+            for(int i = 0;i <= n;i ++){
+                if(elementos[i].getNome().equals(nome)){
+                    for(int j = i;j <= n;j ++){
+                        elementos[j] = elementos[j+1];
+                    }
+                }
+            }
+            elementos[4] = null;
+            n --;
+            JOptionPane.showMessageDialog(null, "Pessoa removida da lista!");
         }
     }
-    public void quantidadePessoas(){
+    /*public void quantidadePessoas(){
         if(vazia()){
             JOptionPane.showMessageDialog(null, "Não há pessoas na fila!");
         }
@@ -107,5 +107,5 @@ public class Lista_Pessoa {
                 JOptionPane.showMessageDialog(null, "O nome " + nome + " foi encontrado " + j + " vezes na fila!");
             }
         }
-    }
+    }*/
 }
