@@ -7,27 +7,27 @@ import javax.swing.JOptionPane;
 public class PListaEstaticaSequencial {
 
     public static void main(String[] args) {
-        Lista_Pessoa minha_lista = new Lista_Pessoa();
+        Lista_Contato minha_lista = new Lista_Contato();
 
         int opcao;
         boolean condicao = true;
         
         while(condicao) {
             opcao = Integer.parseInt(JOptionPane.showInputDialog("Informe a opção desejada:\n"
-                    + "1 - Inserir Pessoa\n"
-                    + "2 - Remover Pessoa\n"
-                    + "3 - Imprimir Pessoas\n"
-                    + "4 - Quantidade de Pessoas na Fila\n"
-                    + "5 - Busca por Pessoa\n"
+                    + "1 - Inserir Contato\n"
+                    + "2 - Remover Contato\n"
+                    + "3 - Imprimir Contatos\n"
+                    + "4 - Quantidade de Contatos na Fila\n"
+                    + "5 - Busca por Contato\n"
                     + "0 - Sair do Programa\n"));
             switch(opcao)
             {
                 case 1:
-                    Pessoa p = new Pessoa(
-                            JOptionPane.showInputDialog("Informe o nome do pessoa:"), 
-                            JOptionPane.showInputDialog("Informe o telefone da pessoa:")
+                    Contato c = new Contato(
+                            JOptionPane.showInputDialog("Informe o nome do contato:"), 
+                            JOptionPane.showInputDialog("Informe o telefone do contato:")
                     );
-                    minha_lista.push(p);
+                    minha_lista.push(c);
                     break;
                 case 2:
                     minha_lista.pop();
@@ -36,10 +36,10 @@ public class PListaEstaticaSequencial {
                     minha_lista.print();
                     break;
                 case 4:
-                    //minha_lista.quantidadePessoas();
+                    minha_lista.quantidadeContatos();
                     break;
                 case 5:
-                    //minha_lista.procuraPessoa();
+                    minha_lista.procuraContato();
                     break;
                 case 0:
                     condicao = false;
