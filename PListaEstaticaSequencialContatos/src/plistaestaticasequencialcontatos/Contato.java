@@ -1,4 +1,4 @@
-package plistaestaticasequencial;
+package plistaestaticasequencialcontatos;
 
 public class Contato {
     private String nome;
@@ -22,7 +22,7 @@ public class Contato {
 
     @Override
     public String toString() {
-        return "Pessoa{" + "nome=" + nome + ", telefone=" + telefone + '}';
+        return "Contato{" + "nome=" + nome + ", telefone=" + telefone + '}';
     }
 
     public Contato(String nome, String telefone) {

@@ -1,6 +1,4 @@
-package plistaestaticasequencial;
-
-
+package plistaestaticasequencialcontatos;
 
 import javax.swing.JOptionPane;
 

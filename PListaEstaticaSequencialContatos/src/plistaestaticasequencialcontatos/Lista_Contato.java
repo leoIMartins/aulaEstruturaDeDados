@@ -1,10 +1,5 @@
-package plistaestaticasequencial;
-import java.util.ArrayList;
+package plistaestaticasequencialcontatos;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
 
 import javax.swing.JOptionPane;
 
@@ -106,6 +101,7 @@ public class Lista_Contato {
             }
         }
     }
+    
     public void quantidadeContatos(){
         if(vazia()){
             JOptionPane.showMessageDialog(null, "Não há contatos na lista!");
